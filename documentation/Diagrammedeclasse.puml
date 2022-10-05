@@ -18,5 +18,17 @@ class Categorie {
 }
 Categorie "0..1"--"0..*" Article
 
+class Commentaire {
+-contenu : text
+-dateCreation : dateTime
+}
+Commentaire "0..*"--"1..1" Article
+
+class Utilisateur {
+-prenom : string
+-nom : string
+-pseudo : string
+}
+Commentaire "0..*"--"1..1" Utilisateur
 
 @enduml

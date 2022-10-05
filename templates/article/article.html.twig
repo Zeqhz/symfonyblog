@@ -5,9 +5,18 @@
 {% block body %}
     <h1>Contenu de l'article</h1>
     <div>
-            <h2>{{ article.titre }}</h2>
-            <p class="fst-italic">Crée le {{ article.createdAt | date('d/m/Y') }}</p>
-            <a class="btn btn-secondary btn-sm" href="#" role="button">{{ article.categorie.titre }}</a>
-            <p>{{ article.contenu }}</p>
+        <h2>{{ article.titre }}</h2>
+        <p class="fst-italic">Crée le {{ article.createdAt | date('d/m/Y') }}</p>
+        {% if article.categorie is not null %}
+            <p>{{ article.categorie.titre }}</p>
+        {% else %}
+            <p>aucune catégorie</p>
+        {% endif %}
+        <p>{{ article.contenu }}</p>
+        <h4> Commentaires : {{ article.commentaires.count }}</h4>
+        {% for commentaire in article.commentaires %}
+            <p class="mt-2"> {{ commentaire.contenu }}</p>
+            <p class="fst-italic">{{ commentaire.createdAt | date("d/m/Y") }}</p>
+        {% endfor %}
     </div>
 {% endblock %}
