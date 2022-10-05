@@ -17,6 +17,7 @@
         {% for commentaire in article.commentaires %}
             <p class="mt-2"> {{ commentaire.contenu }}</p>
             <p class="fst-italic">{{ commentaire.createdAt | date("d/m/Y") }}</p>
+            <p>{{ commentaire.utilisateurs.pseudo }}</p>
         {% endfor %}
     </div>
 {% endblock %}
