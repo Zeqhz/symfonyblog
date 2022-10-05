@@ -19,12 +19,14 @@ class Categorie {
 Categorie "0..1"--"0..*" Article
 
 class Commentaire {
+-id : int
 -contenu : text
 -dateCreation : dateTime
 }
 Commentaire "0..*"--"1..1" Article
 
 class Utilisateur {
+-id : int
 -prenom : string
 -nom : string
 -pseudo : string
