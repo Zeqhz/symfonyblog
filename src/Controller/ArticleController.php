@@ -35,7 +35,7 @@ class ArticleController extends AbstractController
 
         // mise en place de la pagination
         $articles = $paginator->paginate(
-            $this->articleRepository->findBy([], ['createdAt' => 'DESC']), /* query NOT result */
+            $this->articleRepository->findBy(['publie'=>'true'], ['createdAt' => 'DESC']), /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
             10 /*limit per page*/
         );

@@ -9,6 +9,7 @@ class Article {
 -contenu : text
 -createdAt : dateTime
 -slug : slug
+-publication : bool
 }
 
 class Categorie {

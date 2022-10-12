@@ -12,7 +12,7 @@
         {% else %}
             <p>aucune catégorie</p>
         {% endif %}
-        <p>{{ article.contenu }}</p>
+        <p>{{ article.contenu | raw }}</p>
         <h4> Commentaires : {{ article.commentaires.count }}</h4>
         {% for commentaire in article.commentaires %}
             <p class="mt-2"> {{ commentaire.contenu }}</p>
